@@ -3,29 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Painting Game</title>
+	<canvas id="gameCanvas" width="400" height="400"><canvas>
 </head>
 <body>
 <h1>Painting Application</h1>
 <script type="text/javascript">
-	function startGame() {
-	  myGameArea.start();
-	 var array = [[255, 0, 0], [0, 51, 255], [0, 255, 30], [247, 255, 0]];
-	var colorSelected = 0;
-		RunningGame.start();
-	}
+		const snakeboard = document.getElementById("gameCanvas");
+		const snakeboard_ctx = gameCanvas.getContext("2d");
 
-	var myGameArea = {
-	  canvas : document.createElement("canvas"),
-	  start : function() {
-	    this.canvas.width = 480;
-	    this.canvas.height = 270;
-	    this.context = this.canvas.getContext("2d");
-	    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-	  }
-	}
+		var array = [[255, 0, 0], [0, 51, 255], [0, 255, 30], [247, 255, 0]];
+		var colorSelected = 0;
 
-	//game
-	var RunningGame = {
 		for (var i = 0, x = 65; i < 4 ; i++, x += 80){
 		    fill (array[i][0], array[i][1], array[i][2]);
 		    rect (x,330,30,30);
@@ -71,7 +59,6 @@
 		        rect (0, 0, 400, 310);
 		    }
 		};
-	}
 </script>
 </body>
 </html>
