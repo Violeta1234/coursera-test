@@ -8,10 +8,12 @@
 <h1>Painting Application</h1>
 <script type="text/javascript">
 	//canvas
-	var canvas = document.createElement("canvas");
-	canvas.width = 400;
-	canvas.height = 400;
-	document.body.appendChild(canvas);
+ 	canvas : document.createElement("canvas"),
+ 	start : function() {
+    	this.canvas.width = 400;
+    	this.canvas.height = 400;
+    	this.context = this.canvas.getContext("2d");
+    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
 
 	//game
 	var array = [[255, 0, 0], [0, 51, 255], [0, 255, 30], [247, 255, 0]];
